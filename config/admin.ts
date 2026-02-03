@@ -20,10 +20,10 @@ export default ({ env }) => ({
   preview: {
     enabled: true,
     config: {
-      allowedOrigins: [env('PREVIEW_URL', 'http://localhost:30001')],
+      allowedOrigins: [env('PREVIEW_URL', 'https://localmanager.app')],
       async handler(uid, { documentId, locale, status }) {
         const document = await strapi.documents(uid).findOne({ documentId });
-        const baseUrl = env('PREVIEW_URL', 'http://localhost:30001');
+        const baseUrl = env('PREVIEW_URL', 'https://localmanager.app');
 
         // For blog content type, use the slug field
         if (uid === 'api::blog.blog' && document?.slug) {
