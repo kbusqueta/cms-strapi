@@ -12,6 +12,7 @@ export default ({ env }) => ({
         config: {
             provider: 'aws-s3',
             providerOptions: {
+                baseUrl: env('R2_PUBLIC_URL'),
                 s3Options: {
                     accessKeyId: env('R2_ACCESS_KEY_ID'),
                     secretAccessKey: env('R2_SECRET_ACCESS_KEY'),
@@ -19,6 +20,7 @@ export default ({ env }) => ({
                     endpoint: env('R2_ENDPOINT'),
                     params: {
                         Bucket: env('R2_BUCKET'),
+                        ACL: 'public-read',
                     },
                 },
             },
