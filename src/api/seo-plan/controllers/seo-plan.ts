@@ -4,4 +4,4 @@
 
 import { factories } from '@strapi/strapi'
 
-export default factories.createCoreController('api::seo-plan.seo-plan');
+export default factories.createCoreController('api::seo-plan.seo-plan' as any);
