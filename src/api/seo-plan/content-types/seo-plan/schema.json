@@ -1,43 +1,45 @@
-export default {
-  kind: 'collectionType',
-  collectionName: 'seo_plans',
-  info: {
-    singularName: 'seo-plan',
-    pluralName: 'seo-plans',
-    displayName: 'SEO Plan',
-    description: 'Plans de rédaction SEO avec cocons sémantiques',
+{
+  "kind": "collectionType",
+  "collectionName": "seo_plans",
+  "info": {
+    "singularName": "seo-plan",
+    "pluralName": "seo-plans",
+    "displayName": "SEO Plan",
+    "description": "Plans de rédaction SEO avec cocons sémantiques"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
     },
-  options: {
-    draftAndPublish: false,
+    "keyword": {
+      "type": "string"
     },
-  pluginOptions: {},
-  attributes: {
-    title: {
-      type: 'string',
-      required: true,
-        },
-    keyword: {
-      type: 'string',
-        },
-    planData: {
-      type: 'json',
-      required: true,
-        },
-    status: {
-      type: 'enumeration',
-      enum: ['draft', 'active', 'completed'
-            ],
-      default: 'draft',
-        },
-    lastModified: {
-      type: 'datetime',
-      default: () => new Date(),
-        },
-    user: {
-      type: 'relation',
-      relation: 'manyToOne',
-      target: 'plugin: :users-permissions.user',
-      inversedBy: 'seoPlans',
-        },
+    "planData": {
+      "type": "json",
+      "required": true
     },
-};
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "active",
+        "completed"
+      ],
+      "default": "draft"
+    },
+    "lastModified": {
+      "type": "datetime"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "seoPlans"
+    }
+  }
+}

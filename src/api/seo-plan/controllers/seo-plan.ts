@@ -1,3 +1,7 @@
-import { factories } from '@strapi/strapi';
+/**
+ * seo-plan controller
+ */
+
+import { factories } from '@strapi/strapi'
 
 export default factories.createCoreController('api::seo-plan.seo-plan');
